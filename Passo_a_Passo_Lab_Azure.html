@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passo a Passo - Criação de VM no Azure</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .slideshow-container {
+            max-width: 900px;
+            width: 100%;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        .slide {
+            display: none;
+            padding: 40px;
+            text-align: center;
+            animation: fadeIn 0.5s;
+        }
+        
+        .slide.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .slide-image {
+            max-width: 100%;
+            max-height: 500px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .slide-title {
+            color: #667eea;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .slide-description {
+            color: #333;
+            font-size: 16px;
+            line-height: 1.8;
+            text-align: left;
+            background: #f5f5f5;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+            margin-bottom: 20px;
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        
+        button {
+            background-color: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #764ba2;
+        }
+        
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .slide-counter {
+            color: #333;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .dots {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .dot {
+            height: 12px;
+            width: 12px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .dot.active {
+            background-color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        <!-- Slide 1 -->
+        <div class="slide active">
+            <h2 class="slide-title">1. Iniciando a Criação de Recurso no Azure</h2>
+            <img src="imagens/1º Dio-Lab-Azure-Create.jpg" class="slide-image" alt="Passo 1">
+            <div class="slide-description">
+                <strong>Ação realizada:</strong> Acesso ao portal Azure e clique no botão "Criar um recurso" ou "Create" para iniciar o processo de criação de uma nova máquina virtual.
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide">
+            <h2 class="slide-title">2. Seleção de Máquina Virtual</h2>
+            <img src="imagens/2º Dio-Lab-Azure-Create01.jpg" class="slide-image" alt="Passo 2">
+            <div class="slide-description">
+                <strong>Ação realizada:</strong> Busca e seleção da opção "Máquina Virtual" ou "Virtual Machine" no marketplace do Azure para prosseguir com a criação.
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide">
+            <h2 class="slide-title">3. Configuração Básica - Parte 1</h2>
+            <img src="imagens/3º Dio-Lab-Azure-Create02.jpg" class="slide-image" alt="Passo 3">
+            <div class="slide-description">
+                <strong>Ação realizada:</strong> Preenchimento das informações básicas como:
+                <ul style="margin: 10px 0; padding-left: 20px; text-align: left;">
+                    <li>Assinatura (Subscription)</li>
+                    <li>Grupo de Recursos (Resource Group)</li>
+                    <li>Nome da Máquina Virtual</li>
+                    <li>Região (Region)</li>
+                    <li>Imagem do Sistema Operacional</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="slide">
+            <h2 class="slide-title">4. Configuração Básica - Parte 2</h2>
+            <img src="imagens/4º Dio-Lab-Azure-Create03.jpg" class="slide-image" alt="Passo 4">
+            <div class="slide-description">
+                <strong>Ação realizada:</strong> Continuação da configuração básica com:
+                <ul style="margin: 10px 0; padding-left: 20px; text-align: left;">
+                    <li>Tamanho da Máquina Virtual (VM Size)</li>
+                    <li>Tipo de Autenticação (SSH ou Senha)</li>
+                    <li>Nome de usuário administrador</li>
+                    <li>Opções de inicialização rápida</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="slide">
+            <h2 class="slide-title">5. Configuração de Disco</h2>
+            <img src="imagens/5º Dio-Lab-Azure-Disk.jpg" class="slide-image" alt="Passo 5">
+            <div class="slide-description">
+                <strong>Ação realizada:</strong> Configuração de armazenamento e disco:
+                <ul style="margin: 10px 0; padding-left: 20px; text-align: left;">
+                    <li>Tipo de disco do SO (Disk type for OS)</li>
+                    <li>Tamanho do disco</li>
+                    <li>Criptografia de disco</li>
+                    <li>Opções de backup e snapshot</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 6 -->
+        <div class="slide">
+            <h2 class="slide-title">6. Configuração de Rede - Parte 1</h2>
+            <img src="imagens/6º Dio-Lab-Azure-Network.jpg" class="slide-image" alt="Passo 6">
+            <div class="slide-description">
+                <strong>Ação realizada:</strong> Configuração inicial de conectividade de rede:
+                <ul style="margin: 10px 0; padding-left: 20px; text-align: left;">
+                    <li>Seleção ou criação de Virtual Network (VNet)</li>
+                    <li>Seleção de Subnet</li>
+                    <li>Configuração de IP Público</li>
+                    <li>Seleção de Grupo de Segurança de Rede (NSG)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 7 -->
+        <div class="slide">
+            <h2 class="slide-title">7. Configuração de Rede - Parte 2</h2>
+            <img src="imagens/7º Dio-Lab-Azure-Network01.jpg" class="slide-image" alt="Passo 7">
+            <div class="slide-description">
+                <strong>Ação realizada:</strong> Continuação das configurações de rede:
+                <ul style="margin: 10px 0; padding-left: 20px; text-align: left;">
+                    <li>Definição de portas abertas (SSH, HTTP, HTTPS, etc.)</li>
+                    <li>Regras de entrada (Inbound rules)</li>
+                    <li>Verificação de conectividade</li>
+                    <li>Balanceamento de carga (se necessário)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 8 -->
+        <div class="slide">
+            <h2 class="slide-title">8. Configuração de Gerenciamento - Parte 1</h2>
+            <img src="imagens/8º Dio-Lab-Azure-Management.jpg" class="slide-image" alt="Passo 8">
+            <div class="slide-description">
+                <strong>Ação realizada:</strong> Configuração de ferramentas de gerenciamento:
+                <ul style="margin: 10px 0; padding-left: 20px; text-align: left;">
+                    <li>Monitoramento (Azure Monitor)</li>
+                    <li>Log Analytics Workspace</li>
+                    <li>Azure Update Manager</li>
+                    <li>Configuração de Diagnóstico</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 9 -->
+        <div class="slide">
+            <h2 class="slide-title">9. Configuração de Gerenciamento - Parte 2</h2>
+            <img src="imagens/9º Dio-Lab-Azure-Management01.jpg" class="slide-image" alt="Passo 9">
+            <div class="slide-description">
+                <strong>Ação realizada:</strong> Continuação das configurações de gerenciamento:
+                <ul style="margin: 10px 0; padding-left: 20px; text-align: left;">
+                    <li>Tags para organização de recursos</li>
+                    <li>Políticas de conformidade</li>
+                    <li>Alertas e notificações</li>
+                    <li>Controle de Acesso baseado em Função (RBAC)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 10 -->
+        <div class="slide">
+            <h2 class="slide-title">10. Configuração de NOC - Parte 1</h2>
+            <img src="imagens/10º Dio-Lab-Azure-Noc.jpg" class="slide-image" alt="Passo 10">
+            <div class="slide-description">
+                <strong>Ação realizada:</strong> Configuração de Network Operations Center:
+                <ul style="margin: 10px 0; padding-left: 20px; text-align: left;">
+                    <li>Análise de tráfego de rede</li>
+                    <li>Monitoramento de performance</li>
+                    <li>Visualização de topologia de rede</li>
+                    <li>Troubleshooting de conectividade</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 11 -->
+        <div class="slide">
+            <h2 class="slide-title">11. Configuração de NOC - Parte 2</h2>
+            <img src="imagens/11º Dio-Lab-Azure-Noc01.jpg" class="slide-image" alt="Passo 11">
+            <div class="slide-description">
+                <strong>Ação realizada:</strong> Conclusão das configurações de NOC:
+                <ul style="margin: 10px 0; padding-left: 20px; text-align: left;">
+                    <li>Análise de pacotes (Packet Capture)</li>
+                    <li>Verificação de fluxo de tráfego</li>
+                    <li>Diagnóstico de conectividade (Connection Troubleshoot)</li>
+                    <li>Métricas de rede em tempo real</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 12 -->
+        <div class="slide">
+            <h2 class="slide-title">12. Criação de Chave SSH</h2>
+            <img src="imagens/12º Dio-Lab-Azure-Create-Key.jpg" class="slide-image" alt="Passo 12">
+            <div class="slide-description">
+                <strong>Ação realizada:</strong> Geração e configuração de autenticação SSH:
+                <ul style="margin: 10px 0; padding-left: 20px; text-align: left;">
+                    <li>Geração de par de chaves SSH (pública/privada)</li>
+                    <li>Download da chave privada</li>
+                    <li>Configuração de permissões de segurança</li>
+                    <li>Armazenamento seguro da chave privada</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 13 -->
+        <div class="slide">
+            <h2 class="slide-title">13. Revisão de Configurações</h2>
+            <img src="imagens/13º Dio-Lab-Azure-Review.jpg" class="slide-image" alt="Passo 13">
+            <div class="slide-description">
+                <strong>Ação realizada:</strong> Revisão completa de todas as configurações:
+                <ul style="margin: 10px 0; padding-left: 20px; text-align: left;">
+                    <li>Verificação de todas as configurações básicas</li>
+                    <li>Revisão de disco, rede e gerenciamento</li>
+                    <li>Confirmação de custos estimados</li>
+                    <li>Validação de conformidade</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 14 -->
+        <div class="slide">
+            <h2 class="slide-title">14. Conclusão e Inicialização da VM</h2>
+            <img src="imagens/14º Dio-Lab-Azure-End.jpg" class="slide-image" alt="Passo 14">
+            <div class="slide-description">
+                <strong>Ação realizada:</strong> Finalização da criação:
+                <ul style="margin: 10px 0; padding-left: 20px; text-align: left;">
+                    <li>Clique no botão "Criar" ou "Create"</li>
+                    <li>Aguardar o deployment/implantação</li>
+                    <li>Confirmação de sucesso na criação</li>
+                    <li>Recebimento de notificação de conclusão</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 15 -->
+        <div class="slide">
+            <h2 class="slide-title">15. Tela Inicial de Gerenciamento da VM</h2>
+            <img src="imagens/15º Dio-Lab-Azure-Initial.jpg" class="slide-image" alt="Passo 15">
+            <div class="slide-description">
+                <strong>Ação realizada:</strong> Acesso ao dashboard de gerenciamento:
+                <ul style="margin: 10px 0; padding-left: 20px; text-align: left;">
+                    <li>Visualização do painel da máquina virtual</li>
+                    <li>Informações de IP público e privado</li>
+                    <li>Status da máquina virtual (Running)</li>
+                    <li>Acesso rápido a principais funcionalidades</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 16 -->
+        <div class="slide">
+            <h2 class="slide-title">16. Detalhes e Configurações da VM</h2>
+            <img src="imagens/16º Dio-Lab-Azure-Initial01.jpg" class="slide-image" alt="Passo 16">
+            <div class="slide-description">
+                <strong>Ação realizada:</strong> Exploração de detalhes da máquina:
+                <ul style="margin: 10px 0; padding-left: 20px; text-align: left;">
+                    <li>Informações técnicas completas da VM</li>
+                    <li>Configurações de armazenamento</li>
+                    <li>Configurações de rede</li>
+                    <li>Opções de gerenciamento e monitoramento</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 17 -->
+        <div class="slide">
+            <h2 class="slide-title">17. Iniciando Conexão SSH</h2>
+            <img src="imagens/17º Dio-Lab-Azure-Conect.jpg" class="slide-image" alt="Passo 17">
+            <div class="slide-description">
+                <strong>Ação realizada:</strong> Preparação para conexão remota:
+                <ul style="margin: 10px 0; padding-left: 20px; text-align: left;">
+                    <li>Obtenção do endereço IP público da VM</li>
+                    <li>Preparação da chave SSH privada</li>
+                    <li>Comando SSH para conexão: ssh -i [chave_privada] [usuário]@[IP_público]</li>
+                    <li>Configuração do cliente SSH local</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 18 -->
+        <div class="slide">
+            <h2 class="slide-title">18. Máquina Virtual Conectada com Sucesso</h2>
+            <img src="imagens/18º Dio-Lab-Azure-Conected.jpg" class="slide-image" alt="Passo 18">
+            <div class="slide-description">
+                <strong>Ação realizada:</strong> Conexão estabelecida com sucesso:
+                <ul style="margin: 10px 0; padding-left: 20px; text-align: left;">
+                    <li>Conexão SSH estabelecida com a máquina virtual</li>
+                    <li>Acesso ao terminal remoto</li>
+                    <li>Possibilidade de executar comandos na VM</li>
+                    <li>Máquina pronta para uso e configuração de aplicações</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="dots" id="dots"></div>
+
+        <div class="controls">
+            <button onclick="previousSlide()" id="prevBtn">← Anterior</button>
+            <span class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">18</span></span>
+            <button onclick="nextSlide()" id="nextBtn">Próximo →</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 18;
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            
+            if (n > totalSlides) {
+                currentSlide = totalSlides;
+            }
+            if (n < 1) {
+                currentSlide = 1;
+            }
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[currentSlide - 1].classList.add('active');
+            
+            document.getElementById('currentSlide').textContent = currentSlide;
+            document.getElementById('prevBtn').disabled = currentSlide === 1;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides;
+            
+            updateDots();
+        }
+
+        function nextSlide() {
+            currentSlide++;
+            showSlide(currentSlide);
+        }
+
+        function previousSlide() {
+            currentSlide--;
+            showSlide(currentSlide);
+        }
+
+        function updateDots() {
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach((dot, index) => {
+                if (index + 1 === currentSlide) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        function createDots() {
+            const dotsContainer = document.getElementById('dots');
+            for (let i = 1; i <= totalSlides; i++) {
+                const dot = document.createElement('span');
+                dot.className = 'dot';
+                dot.onclick = () => {
+                    currentSlide = i;
+                    showSlide(currentSlide);
+                };
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') previousSlide();
+            if (e.key === 'ArrowRight') nextSlide();
+        });
+
+        createDots();
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
