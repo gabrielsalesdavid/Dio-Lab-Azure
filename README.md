@@ -105,7 +105,7 @@ Dio-Lab-Azure/
 ### **BLOCO 1: CRIAÇÃO E SELEÇÃO (Passos 1-2)**
 
 #### 1️⃣ Iniciando a Criação de Recurso no Azure
-![Passo 1](imagens/1º%20Dio-Lab-Azure-Create.jpg)
+![Passo 1](Docs/imagens/1º%20Dio-Lab-Azure-Create.jpg)
 
 **O que fazer:**
 - Acesse https://portal.azure.com
@@ -119,7 +119,7 @@ Dio-Lab-Azure/
 ---
 
 #### 2️⃣ Seleção de Máquina Virtual
-![Passo 2](imagens/2º%20Dio-Lab-Azure-Create01.jpg)
+![Passo 2](Docs/imagens/2º%20Dio-Lab-Azure-Create01.jpg)
 
 **O que fazer:**
 - Busque por **"Virtual Machine"** ou **"Máquina Virtual"**
@@ -136,7 +136,7 @@ Dio-Lab-Azure/
 ### **BLOCO 2: CONFIGURAÇÃO BÁSICA (Passos 3-4)**
 
 #### 3️⃣ Configuração Básica - Parte 1
-![Passo 3](imagens/3º%20Dio-Lab-Azure-Create02.jpg)
+![Passo 3](Docs/imagens/3º%20Dio-Lab-Azure-Create02.jpg)
 
 **Campos a preencher:**
 
@@ -160,7 +160,7 @@ Dio-Lab-Azure/
 ---
 
 #### 4️⃣ Configuração Básica - Parte 2
-![Passo 4](imagens/4º%20Dio-Lab-Azure-Create03.jpg)
+![Passo 4](Docs/imagens/4º%20Dio-Lab-Azure-Create03.jpg)
 
 **Campos a preencher:**
 
@@ -191,7 +191,7 @@ D4s   → 4 vCPU, 16 GB RAM  → $0.20/h (workloads intensivas)
 ### **BLOCO 3: ARMAZENAMENTO (Passo 5)**
 
 #### 5️⃣ Configuração de Disco
-![Passo 5](imagens/5º%20Dio-Lab-Azure-Disk.jpg)
+![Passo 5](Docs/imagens/5º%20Dio-Lab-Azure-Disk.jpg)
 
 **Opções de Disco:**
 
@@ -225,7 +225,7 @@ Throughput: 125 MB/s (Premium padrão)
 ### **BLOCO 4: REDE (Passos 6-7)**
 
 #### 6️⃣ Configuração de Rede - Parte 1
-![Passo 6](imagens/6º%20Dio-Lab-Azure-Network.jpg)
+![Passo 6](Docs/imagens/6º%20Dio-Lab-Azure-Network.jpg)
 
 **Componentes de Rede:**
 
@@ -268,7 +268,7 @@ COM IP PÚBLICO = Acessível da internet (com regras NSG)
 ---
 
 #### 7️⃣ Configuração de Rede - Parte 2
-![Passo 7](imagens/7º%20Dio-Lab-Azure-Network01.jpg)
+![Passo 7](Docs/imagens/7º%20Dio-Lab-Azure-Network01.jpg)
 
 **Regras de Firewall (NSG):**
 
@@ -305,7 +305,7 @@ Priority:           100
 ### **BLOCO 5: GERENCIAMENTO (Passos 8-9)**
 
 #### 8️⃣ Configuração de Gerenciamento - Parte 1
-![Passo 8](imagens/8º%20Dio-Lab-Azure-Management.jpg)
+![Passo 8](Docs/imagens/8º%20Dio-Lab-Azure-Management.jpg)
 
 **Ferramentas de Monitoramento:**
 
@@ -340,7 +340,7 @@ Updates:
 ---
 
 #### 9️⃣ Configuração de Gerenciamento - Parte 2
-![Passo 9](imagens/9º%20Dio-Lab-Azure-Management01.jpg)
+![Passo 9](Docs/imagens/9º%20Dio-Lab-Azure-Management01.jpg)
 
 **Gerenciamento Avançado:**
 
@@ -382,7 +382,7 @@ Custom Role  → Permissões específicas
 ### **BLOCO 6: FERRAMENTAS DE REDE (Passos 10-11)**
 
 #### 🔟 Configuração de NOC - Parte 1
-![Passo 10](imagens/10º%20Dio-Lab-Azure-Noc.jpg)
+![Passo 10](Docs/imagens/10º%20Dio-Lab-Azure-Noc.jpg)
 
 **Network Operations Center (NOC):**
 
@@ -412,7 +412,7 @@ Portal Azure → Sua VM → Networking → Network Watcher
 ---
 
 #### 1️⃣1️⃣ Configuração de NOC - Parte 2
-![Passo 11](imagens/11º%20Dio-Lab-Azure-Noc01.jpg)
+![Passo 11](Docs/imagens/11º%20Dio-Lab-Azure-Noc01.jpg)
 
 **Ferramentas Avançadas de Diagnóstico:**
 
@@ -453,7 +453,7 @@ Passos:
 ### **BLOCO 7: SEGURANÇA (Passo 12)**
 
 #### 1️⃣2️⃣ Criação de Chave SSH
-![Passo 12](imagens/12º%20Dio-Lab-Azure-Create-Key.jpg)
+![Passo 12](Docs/imagens/12º%20Dio-Lab-Azure-Create-Key.jpg)
 
 **O que é SSH e por que é importante:**
 
@@ -528,7 +528,7 @@ Acesso Concedido!
 ### **BLOCO 8: REVISÃO E CRIAÇÃO (Passos 13-14)**
 
 #### 1️⃣3️⃣ Revisão de Configurações
-![Passo 13](imagens/13º%20Dio-Lab-Azure-Review.jpg)
+![Passo 13](Docs/imagens/13º%20Dio-Lab-Azure-Review.jpg)
 
 **Checklist Completo Antes de Criar:**
 
@@ -582,7 +582,7 @@ B1s Ubuntu:
 ---
 
 #### 1️⃣4️⃣ Conclusão e Inicialização da VM
-![Passo 14](imagens/14º%20Dio-Lab-Azure-End.jpg)
+![Passo 14](Docs/imagens/14º%20Dio-Lab-Azure-End.jpg)
 
 **O Grande Momento:**
 
@@ -624,7 +624,7 @@ Verifique:
 ### **BLOCO 9: ACESSO E GERENCIAMENTO (Passos 15-16)**
 
 #### 1️⃣5️⃣ Tela Inicial de Gerenciamento da VM
-![Passo 15](imagens/15º%20Dio-Lab-Azure-Initial.jpg)
+![Passo 15](Docs/imagens/15º%20Dio-Lab-Azure-Initial.jpg)
 
 **O Dashboard Principal:**
 
@@ -672,7 +672,7 @@ Para economizar:
 ---
 
 #### 1️⃣6️⃣ Detalhes e Configurações da VM
-![Passo 16](imagens/16º%20Dio-Lab-Azure-Initial01.jpg)
+![Passo 16](Docs/imagens/16º%20Dio-Lab-Azure-Initial01.jpg)
 
 **Seções Exploráveis:**
 
@@ -728,7 +728,7 @@ Gráficos:
 ### **BLOCO 10: CONEXÃO REMOTA (Passos 17-18)**
 
 #### 1️⃣7️⃣ Iniciando Conexão SSH
-![Passo 17](imagens/17º%20Dio-Lab-Azure-Conect.jpg)
+![Passo 17](Docs/imagens/17º%20Dio-Lab-Azure-Conect.jpg)
 
 **Preparação para Conexão:**
 
@@ -788,7 +788,7 @@ Are you sure you want to continue? (yes/no)
 ---
 
 #### 1️⃣8️⃣ Máquina Virtual Conectada com Sucesso
-![Passo 18](imagens/18º%20Dio-Lab-Azure-Conected.jpg)
+![Passo 18](Docs/imagens/18º%20Dio-Lab-Azure-Conected.jpg)
 
 **Confirmação de Sucesso:**
 
